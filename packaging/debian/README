@@ -1,0 +1,10 @@
+README
+
+Learn more: https://shop.pimoroni.com/products/ledmatrix
+For examples run: `curl -sS get.pimoroni.com/ledmatrix | bash`
+
+IMPORTANT
+
+LED Matrix requires i2c.
+To enable run `curl get.pimoroni.com/i2c | bash`
+or use raspi-config and reboot your Raspberry Pi.
