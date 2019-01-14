@@ -3,7 +3,7 @@ LED Matrix
 
 |Build Status| |Coverage Status| |PyPi Package| |Python Versions|
 
-https://shop.pimoroni.com/products/led-matrix
+https://shop.pimoroni.com/products/5x5-rgb-matrix-breakout
 
 An adorably tiny 5x5 pixel Breakout Garden compatible LED matrix
 breakout for adding status displays or fancy lighting to your project.
@@ -29,7 +29,7 @@ In the new terminal window type the command exactly as it appears below
 
 .. code:: bash
 
-    curl https://get.pimoroni.com/ledmatrix | bash
+    curl https://get.pimoroni.com/rgbmatrix5x5 | bash
 
 Manual install:
 ~~~~~~~~~~~~~~~
@@ -41,13 +41,13 @@ on Raspbian:
 
 .. code:: bash
 
-    sudo apt-get install python3-ledmatrix
+    sudo apt-get install python3-rgbmatrix5x5
 
 other environments:
 
 .. code:: bash
 
-    sudo pip3 install ledmatrix
+    sudo pip3 install rgbmatrix5x5
 
 Library install for Python 2:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -56,13 +56,13 @@ on Raspbian:
 
 .. code:: bash
 
-    sudo apt-get install python-ledmatrix
+    sudo apt-get install python-rgbmatrix5x5
 
 other environments:
 
 .. code:: bash
 
-    sudo pip2 install ledmatrix
+    sudo pip2 install rgbmatrix5x5
 
 Development:
 ~~~~~~~~~~~~
@@ -83,15 +83,15 @@ In all cases you will have to enable the i2c bus.
 Documentation & Support
 -----------------------
 
--  Guides and tutorials - https://learn.pimoroni.com/led-matrix
--  Function reference - http://docs.pimoroni.com/ledmatrix/
+-  Guides and tutorials - https://learn.pimoroni.com/5x5-rgb-matrix-breakout
+-  Function reference - http://docs.pimoroni.com/rgbmatrix5x5/
 -  Get help - http://forums.pimoroni.com/c/support
 
-.. |Build Status| image:: https://travis-ci.com/pimoroni/led-matrix.svg?branch=master
-   :target: https://travis-ci.com/pimoroni/led-matrix
-.. |Coverage Status| image:: https://coveralls.io/repos/github/pimoroni/led-matrix/badge.svg?branch=master
-   :target: https://coveralls.io/github/pimoroni/led-matrix?branch=master
-.. |PyPi Package| image:: https://img.shields.io/pypi/v/ledmatrix.svg
-   :target: https://pypi.python.org/pypi/ledmatrix
-.. |Python Versions| image:: https://img.shields.io/pypi/pyversions/ledmatrix.svg
-   :target: https://pypi.python.org/pypi/ledmatrix
+.. |Build Status| image:: https://travis-ci.com/pimoroni/rgbmatrix5x5.svg?branch=master
+   :target: https://travis-ci.com/pimoroni/rgbmatrix5x5
+.. |Coverage Status| image:: https://coveralls.io/repos/github/pimoroni/rgbmatrix5x5/badge.svg?branch=master
+   :target: https://coveralls.io/github/pimoroni/rgbmatrix5x5?branch=master
+.. |PyPi Package| image:: https://img.shields.io/pypi/v/rgbmatrix5x5.svg
+   :target: https://pypi.python.org/pypi/rgbmatrix5x5
+.. |Python Versions| image:: https://img.shields.io/pypi/pyversions/rgbmatrix5x5.svg
+   :target: https://pypi.python.org/pypi/rgbmatrix5x5

@@ -49,5 +49,5 @@ def set_multiple_pixels(indexes, from_colour, to_colour=None):
     step_b /= length
 
     for index in indexes:
-        set_pixel(index, from_r + (step_r * step), from_g + (step_g * step), from_b + (step_b * step))
+        set_pixel(index % 5, index // 5, from_r + (step_r * step), from_g + (step_g * step), from_b + (step_b * step))
         step += 1

@@ -8,5 +8,5 @@ export DH_OPTIONS
 	dh $@ --with python2,python3 --buildsystem=python_distutils
 
 override_dh_auto_install:
-	python setup.py install --root debian/python-ledmatrix --install-layout=deb
-	python3 setup.py install --root debian/python3-ledmatrix --install-layout=deb
+	python setup.py install --root debian/python-rgbmatrix5x5 --install-layout=deb
+	python3 setup.py install --root debian/python3-rgbmatrix5x5 --install-layout=deb

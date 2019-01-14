@@ -1,4 +1,4 @@
 [run]
-source = ledmatrix
+source = rgbmatrix5x5
 omit =
     .tox/*

@@ -1,7 +1,7 @@
 README
 
-Learn more: https://shop.pimoroni.com/products/ledmatrix
-For examples run: `curl -sS get.pimoroni.com/ledmatrix | bash`
+Learn more: https://shop.pimoroni.com/products/5x5-rgb-matrix-breakout
+For examples run: `curl -sS get.pimoroni.com/rgbmatrix5x5 | bash`
 
 IMPORTANT
 

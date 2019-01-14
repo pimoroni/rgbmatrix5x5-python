@@ -38,7 +38,7 @@ classifiers = ['Development Status :: 5 - Production/Stable',
                'Topic :: System :: Hardware']
 
 setup(
-    name='ledmatrix',
+    name='rgbmatrix5x5',
     version='0.0.1',
     author='Philip Howard',
     author_email='phil@pimoroni.com',
@@ -49,6 +49,6 @@ setup(
     url='http://www.pimoroni.com',
     classifiers=classifiers,
     py_modules=[],
-    packages=['ledmatrix'],
+    packages=['rgbmatrix5x5'],
     include_package_data=True
 )
