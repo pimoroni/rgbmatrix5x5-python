@@ -23,7 +23,6 @@ below:
 .. figure:: http://get.pimoroni.com/resources/github-repo-terminal.png
    :alt: Finding the terminal
 
-   Finding the terminal
 In the new terminal window type the command exactly as it appears below
 (check for typos) and follow the on-screen instructions:
 

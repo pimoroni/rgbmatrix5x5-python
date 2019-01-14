@@ -23,6 +23,15 @@ set_clear_on_exit = display.set_clear_on_exit
 
 
 def set_pixel(x, y, r, g, b):
+    """Set a single pixel.
+
+    :param x: X position from 0 to 4
+    :param y: Y position from 0 to 4
+    :param r: Amount of red from 0 to 255
+    :param g: Amount of green from 0 to 255
+    :param b: Amount of blue from 0 to 255
+
+    """
     x, y = y, x
     if x % 2 == 1:
         y = 4 - y
@@ -49,5 +58,5 @@ def set_multiple_pixels(indexes, from_colour, to_colour=None):
     step_b /= length
 
     for index in indexes:
-        set_pixel(index % 5, index // 5, from_r + (step_r * step), from_g + (step_g * step), from_b + (step_b * step))
+        display.set_pixel(index, from_r + (step_r * step), from_g + (step_g * step), from_b + (step_b * step))
         step += 1
