@@ -3,7 +3,9 @@
 import colorsys
 import time
 
-import rgbmatrix5x5
+from rgbmatrix5x5 import RGBMatrix5x5
+
+rgbmatrix5x5 = RGBMatrix5x5()
 
 spacing = 360.0 / 5.0
 hue = 0
@@ -12,8 +14,8 @@ rgbmatrix5x5.set_clear_on_exit()
 rgbmatrix5x5.set_brightness(0.8)
 
 while True:
-    for x in range(rgbmatrix5x5.DISPLAY_WIDTH):
-        for y in range(rgbmatrix5x5.DISPLAY_HEIGHT):
+    for x in range(rgbmatrix5x5.width):
+        for y in range(rgbmatrix5x5.height):
             hue = int(time.time() * 100) % 360
             offset = (x * y) / 25.0 * spacing
             h = ((hue + offset) % 360) / 360.0
