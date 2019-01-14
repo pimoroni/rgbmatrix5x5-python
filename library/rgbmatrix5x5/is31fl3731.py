@@ -60,15 +60,15 @@ class Matrix:
     _width = 25
     _height = 1
 
-    def __init__(self, i2c, address=0x74, gamma_table=None):
+    def __init__(self, address=0x74, i2c_dev=None, gamma_table=LED_GAMMA):
         """Initialise Matrix.
 
-        :param i2c: SMBus-compatible i2s bus device
         :param address: i2c address
+        :param i2c_dev: SMBus-compatible i2s bus device
         :param gamma_table: list of 256 gamma correction values
 
         """
-        self.i2c = i2c
+        self.i2c = i2c_dev
         self.address = address
         self._is_setup = False
         self._clear_on_exit = True
@@ -199,7 +199,7 @@ class Matrix:
         except AttributeError:
             pass
 
-        self.buf = [[0, 0, 0, 1.0] for x in range(self._width)]
+        self.buf = [[0, 0, 0, 1.0] for x in range(self._width * self._height)]
 
     def set_brightness(self, brightness):
         """Set a global brightness value.
@@ -216,12 +216,14 @@ class Matrix:
 
         """
         for x in range(self._width):
-            self.set_pixel(x, r, g, b, brightness)
+            for y in range(self._height):
+                self.set_pixel(x, r, g, b, brightness)
 
-    def set_pixel(self, x, r, g, b, brightness=1.0):
+    def set_pixel(self, x, y, r, g, b, brightness=1.0):
         """Set a single pixel in the buffer.
 
         :param x: Position of pixel from left
+        :param y: Position fo pixel from top
         :param r, g, b: Intensity of the pixel, from 0 to 255.
 
         """
@@ -232,10 +234,38 @@ class Matrix:
                 raise ValueError('Value {} out of range. RGB values should be between 0 and 1'.format(c))
 
         try:
-            self.buf[x] = r, g, b, brightness
+            self.buf[y + (x * 5)] = r, g, b, brightness
 
         except IndexError:
             raise ValueError('x position ({}) is out of range!'.format(x))
+
+    def set_multiple_pixels(indexes, from_colour, to_colour=None):
+        """Set multiple pixels to a range of colours sweeping from from_colour to to_colour.
+
+        :param from_colour: A tuple with 3 values representing the red, green and blue of the first colour
+        :param to_colour: A tuple with 3 values representing the red, green and blue of the second colour
+
+        """
+        if to_colour is None:
+            to_colour = from_colour
+
+        length = float(len(indexes))
+        step = 0
+        from_r, from_g, from_b = from_colour
+        to_r, to_g, to_b = to_colour
+        step_r, step_g, step_b = to_r - from_r, to_g - from_g, to_b - from_b
+        step_r /= length
+        step_g /= length
+        step_b /= length
+
+        for index in indexes:
+            if type(index) == int:
+                y = index // 5
+                x = index % 5
+            else:
+                x, y = index
+            display.set_pixel(x, y, from_r + (step_r * step), from_g + (step_g * step), from_b + (step_b * step))
+            step += 1
 
     def get_shape(self):
         """Get the size/shape of the display.
@@ -254,7 +284,7 @@ class Matrix:
 
         output = [0 for x in range(144)]
 
-        for x in range(self._width):
+        for x in range(self._width * self._height):
                 r, g, b, br = self.buf[x]
                 r, g, b = [self._gamma_table[int(c * self._brightness * br)] for c in (r, g, b)]
 
@@ -317,11 +347,11 @@ class Matrix:
         return x + y * 16
 
 
-class LEDSHIM(Matrix):
+class RGBMatrix5x5(Matrix):
     """LED SHIM."""
 
-    width = 25
-    height = 1
+    _width = 5
+    _height = 5
 
     def _pixel_addr(self, x, rgb):
         lookup = [
