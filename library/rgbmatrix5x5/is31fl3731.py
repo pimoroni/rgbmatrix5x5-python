@@ -234,6 +234,8 @@ class Matrix:
                 raise ValueError('Value {} out of range. RGB values should be between 0 and 1'.format(c))
 
         try:
+            if x % 2 == 1:
+                y = 4 - y
             self.buf[y + (x * 5)] = r, g, b, brightness
 
         except IndexError:
