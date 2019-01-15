@@ -4,5 +4,6 @@ import sys
 
 def test_setup():
     sys.modules['smbus'] = mock.Mock()
-    import rgbmatrix5x5
+    from rgbmatrix5x5 import RGBMatrix5x5
+    rgbmatrix5x5 = RGBMatrix5x5()
     rgbmatrix5x5.show()
