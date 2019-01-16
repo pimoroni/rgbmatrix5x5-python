@@ -29,27 +29,11 @@ curl https://get.pimoroni.com/rgbmatrix5x5 | bash
 
 #### Library install for Python 3:
 
-on Raspbian:
-
-```bash
-sudo apt-get install python3-rgbmatrix5x5
-```
-
-other environments: 
-
 ```bash
 sudo pip3 install rgbmatrix5x5
 ```
 
 #### Library install for Python 2:
-
-on Raspbian:
-
-```bash
-sudo apt-get install python-rgbmatrix5x5
-```
-
-other environments: 
 
 ```bash
 sudo pip2 install rgbmatrix5x5
