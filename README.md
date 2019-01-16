@@ -2,8 +2,8 @@
 
 [![Build Status](https://travis-ci.com/pimoroni/rgbmatrix5x5-python.svg?branch=master)](https://travis-ci.com/pimoroni/rgbmatrix5x5-python)
 [![Coverage Status](https://coveralls.io/repos/github/pimoroni/rgbmatrix5x5-python/badge.svg?branch=master)](https://coveralls.io/github/pimoroni/rgbmatrix5x5-python?branch=master)
-[![PyPi Package](https://img.shields.io/pypi/v/rgbmatrix5x5-python.svg)](https://pypi.python.org/pypi/rgbmatrix5x5-python)
-[![Python Versions](https://img.shields.io/pypi/pyversions/rgbmatrix5x5-python.svg)](https://pypi.python.org/pypi/rgbmatrix5x5-python)
+[![PyPi Package](https://img.shields.io/pypi/v/rgbmatrix5x5.svg)](https://pypi.python.org/pypi/rgbmatrix5x5)
+[![Python Versions](https://img.shields.io/pypi/pyversions/rgbmatrix5x5.svg)](https://pypi.python.org/pypi/rgbmatrix5x5)
 
 https://shop.pimoroni.com/products/5x5-rgb-matrix-breakout
 
