@@ -86,10 +86,10 @@ Documentation & Support
 -  Function reference - http://docs.pimoroni.com/rgbmatrix5x5/
 -  Get help - http://forums.pimoroni.com/c/support
 
-.. |Build Status| image:: https://travis-ci.com/pimoroni/rgbmatrix5x5.svg?branch=master
-   :target: https://travis-ci.com/pimoroni/rgbmatrix5x5
-.. |Coverage Status| image:: https://coveralls.io/repos/github/pimoroni/rgbmatrix5x5/badge.svg?branch=master
-   :target: https://coveralls.io/github/pimoroni/rgbmatrix5x5?branch=master
+.. |Build Status| image:: https://travis-ci.com/pimoroni/rgbmatrix5x5-python.svg?branch=master
+   :target: https://travis-ci.com/pimoroni/rgbmatrix5x5-python
+.. |Coverage Status| image:: https://coveralls.io/repos/github/pimoroni/rgbmatrix5x5-python/badge.svg?branch=master
+   :target: https://coveralls.io/github/pimoroni/rgbmatrix5x5-python?branch=master
 .. |PyPi Package| image:: https://img.shields.io/pypi/v/rgbmatrix5x5.svg
    :target: https://pypi.python.org/pypi/rgbmatrix5x5
 .. |Python Versions| image:: https://img.shields.io/pypi/pyversions/rgbmatrix5x5.svg
