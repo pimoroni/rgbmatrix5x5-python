@@ -52,6 +52,4 @@ In all cases you will have to enable the i2c bus.
 
 ## Documentation & Support
 
-* Guides and tutorials - https://learn.pimoroni.com/5x5-rgb-matrix-breakout
-* Function reference - http://docs.pimoroni.com/rgbmatrix5x5/
 * Get help - http://forums.pimoroni.com/c/support
