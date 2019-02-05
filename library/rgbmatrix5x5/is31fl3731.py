@@ -241,7 +241,7 @@ class Matrix:
         except IndexError:
             raise ValueError('x position ({}) is out of range!'.format(x))
 
-    def set_multiple_pixels(indexes, from_colour, to_colour=None):
+    def set_multiple_pixels(self, indexes, from_colour, to_colour=None):
         """Set multiple pixels to a range of colours sweeping from from_colour to to_colour.
 
         :param from_colour: A tuple with 3 values representing the red, green and blue of the first colour
