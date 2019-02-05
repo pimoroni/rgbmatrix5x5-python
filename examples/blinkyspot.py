@@ -41,10 +41,10 @@ while True:
             for x in range(width):
                 h = 0.5
                 s = 0.8
-                if height<=width:
-                    v = gauss[x,y+delta]
+                if height <= width:
+                    v = gauss[x, y+delta]
                 else:
-                    v = gauss[x+delta,y]
+                    v = gauss[x+delta, y]
                 rgb = colorsys.hsv_to_rgb(h, s, v)
                 r = int(rgb[0]*255.0)
                 g = int(rgb[1]*255.0)
