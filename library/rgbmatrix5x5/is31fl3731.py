@@ -35,7 +35,7 @@ _ENABLE_OFFSET = 0x00
 _BLINK_OFFSET = 0x12
 _COLOR_OFFSET = 0x24
 
-LED_GAMMA = [
+LED_GAMMA = (
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2,
     2, 2, 2, 3, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5,
@@ -51,14 +51,14 @@ LED_GAMMA = [
     135, 137, 138, 140, 142, 143, 145, 146, 148, 150, 151, 153, 155, 157, 158, 160,
     162, 163, 165, 167, 169, 170, 172, 174, 176, 178, 179, 181, 183, 185, 187, 189,
     191, 193, 194, 196, 198, 200, 202, 204, 206, 208, 210, 212, 214, 216, 218, 220,
-    222, 224, 227, 229, 231, 233, 235, 237, 239, 241, 244, 246, 248, 250, 252, 255]
+    222, 224, 227, 229, 231, 233, 235, 237, 239, 241, 244, 246, 248, 250, 252, 255)
 
 
 class Matrix:
     """Represent an IS31LF3731 Matrix Display."""
 
-    _width = 25
-    _height = 1
+    _width = 5
+    _height = 5
 
     def __init__(self, address=0x74, i2c_dev=None, gamma_table=LED_GAMMA):
         """Initialise Matrix.
@@ -287,13 +287,13 @@ class Matrix:
         output = [0 for x in range(144)]
 
         for x in range(self._width * self._height):
-                r, g, b, br = self.buf[x]
-                r, g, b = [self._gamma_table[int(c * self._brightness * br)] for c in (r, g, b)]
+            r, g, b, br = self.buf[x]
+            r, g, b = [self._gamma_table[int(c * self._brightness * br)] for c in (r, g, b)]
 
-                rgb = [r, g, b]
-                for y in range(3):
-                    idx = self._pixel_addr(x, y)
-                    output[idx] = rgb[y]
+            rgb = [r, g, b]
+            for y in range(3):
+                idx = self._pixel_addr(x, y)
+                output[idx] = rgb[y]
 
         self._bank(next_frame)
 
