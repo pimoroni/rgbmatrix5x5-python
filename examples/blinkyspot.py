@@ -2,7 +2,6 @@
 
 import time
 import colorsys
-from sys import exit
 
 try:
     import numpy
