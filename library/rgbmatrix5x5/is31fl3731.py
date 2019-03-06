@@ -217,7 +217,7 @@ class Matrix:
         """
         for x in range(self._width):
             for y in range(self._height):
-                self.set_pixel(x, r, g, b, brightness)
+                self.set_pixel(x, y, r, g, b, brightness)
 
     def set_pixel(self, x, y, r, g, b, brightness=1.0):
         """Set a single pixel in the buffer.
@@ -290,10 +290,10 @@ class Matrix:
             r, g, b, br = self.buf[x]
             r, g, b = [self._gamma_table[int(c * self._brightness * br)] for c in (r, g, b)]
 
-            rgb = [r, g, b]
-            for y in range(3):
-                idx = self._pixel_addr(x, y)
-                output[idx] = rgb[y]
+            ir, ig, ib = self._pixel_addr(x)
+            output[ir] = r
+            output[ig] = g
+            output[ib] = b
 
         self._bank(next_frame)
 
@@ -346,7 +346,7 @@ class Matrix:
             yield l[i:i + n]
 
     def _pixel_addr(self, x, y):
-        return x + y * 16
+        return x + y * 5
 
 
 class RGBMatrix5x5(Matrix):
@@ -355,7 +355,7 @@ class RGBMatrix5x5(Matrix):
     _width = 5
     _height = 5
 
-    def _pixel_addr(self, x, rgb):
+    def _pixel_addr(self, x, rgb=None):
         lookup = [
             (118, 69, 85),
             (117, 68, 101),
@@ -387,4 +387,7 @@ class RGBMatrix5x5(Matrix):
             (12, 76, 109),
             (13, 77, 93),
         ]
-        return lookup[x][rgb]
+        if rgb is None:
+            return lookup[x]
+        else:
+            return lookup[x][rgb]
