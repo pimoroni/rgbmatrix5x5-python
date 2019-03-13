@@ -1,12 +1,6 @@
 #!/usr/bin/env python
 
 import random
-from sys import exit
-
-try:
-    import numpy
-except ImportError:
-    exit('This script requires the numpy module\nInstall with: sudo pip install numpy')
 
 from rgbmatrix5x5 import RGBMatrix5x5
 
@@ -22,6 +16,7 @@ forest_width = width
 forest_height = height
 
 hood_size = 3
+
 
 def get_neighbours(x, y, z):
     return [(x2, y2) for x2 in range(x - (z - 1), x + z) for y2 in range(y - (z - 1), y + z) if (-1 < x < forest_width and -1 < y < forest_height and (x != x2 or y != y2) and (0 <= x2 < forest_width) and (0 <= y2 < forest_height))]

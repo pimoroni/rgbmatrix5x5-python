@@ -32,9 +32,10 @@ def make_gaussian(fwhm):
     gauss = numpy.exp(-4 * numpy.log(2) * ((x - x0) ** 2 + (y - y0) ** 2) / fwhm ** 2)
     return gauss
 
+
 while True:
     for z in list(range(1, 10)[::-1]) + list(range(1, 10)):
-        fwhm = 5.0/z
+        fwhm = 5.0 / z
         gauss = make_gaussian(fwhm)
         start = time.time()
         for y in range(height):
@@ -42,13 +43,13 @@ while True:
                 h = 0.5
                 s = 0.8
                 if height <= width:
-                    v = gauss[x, y+delta]
+                    v = gauss[x, y + delta]
                 else:
-                    v = gauss[x+delta, y]
+                    v = gauss[x + delta, y]
                 rgb = colorsys.hsv_to_rgb(h, s, v)
-                r = int(rgb[0]*255.0)
-                g = int(rgb[1]*255.0)
-                b = int(rgb[2]*255.0)
+                r = int(rgb[0] * 255.0)
+                g = int(rgb[1] * 255.0)
+                b = int(rgb[2] * 255.0)
                 rgbmatrix5x5.set_pixel(x, y, r, g, b)
         rgbmatrix5x5.show()
         end = time.time()
