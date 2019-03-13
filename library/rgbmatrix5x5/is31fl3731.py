@@ -199,7 +199,7 @@ class Matrix:
         except AttributeError:
             pass
 
-        self.buf = [[0, 0, 0, 1.0] for x in range(self._width * self._height)]
+        self.buf = [(0, 0, 0, 1.0) for x in range(self._width * self._height)]
 
     def set_brightness(self, brightness):
         """Set a global brightness value.
@@ -236,7 +236,7 @@ class Matrix:
         try:
             if x % 2 == 1:
                 y = 4 - y
-            self.buf[y + (x * 5)] = r, g, b, brightness
+            self.buf[y + (x * 5)] = (r, g, b, brightness)
 
         except IndexError:
             raise ValueError('x position ({}) is out of range!'.format(x))
