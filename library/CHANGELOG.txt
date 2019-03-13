@@ -1,3 +1,9 @@
+0.0.2
+-----
+
+* Fixed `set_all` method
+* Fixed `set_multiple_pixels` method
+
 0.0.1
 -----
 
