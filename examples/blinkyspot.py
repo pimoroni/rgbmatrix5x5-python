@@ -10,6 +10,14 @@ except ImportError:
 
 from rgbmatrix5x5 import RGBMatrix5x5
 
+print("""
+RGBMatrix5x5 - Blinky Spot
+
+Displays a pulsing dot in the middle of the matrix.
+
+Press Ctrl+C to exit!
+""")
+
 rgbmatrix5x5 = RGBMatrix5x5()
 
 rgbmatrix5x5.set_clear_on_exit()

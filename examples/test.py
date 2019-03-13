@@ -2,6 +2,16 @@
 import time
 from rgbmatrix5x5 import RGBMatrix5x5
 
+
+print("""
+RGBMatrix5x5 - Test
+
+Lights up each pixel in turn, going through Red, Green and Blue
+colours to test display functionality.
+
+Press Ctrl+C to exit!
+""")
+
 rgbmatrix5x5 = RGBMatrix5x5()
 
 for col in ((255, 0, 0), (0, 255, 0), (0, 0, 255)):

@@ -4,6 +4,14 @@ import random
 
 from rgbmatrix5x5 import RGBMatrix5x5
 
+print("""
+RGBMatrix5x5 - Forest Fire
+
+Runs a simple cellular automata resembling a forest fire.
+
+Press Ctrl+C to exit!
+""")
+
 rgbmatrix5x5 = RGBMatrix5x5()
 
 rgbmatrix5x5.set_clear_on_exit()

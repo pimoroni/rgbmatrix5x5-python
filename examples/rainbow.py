@@ -5,6 +5,14 @@ import time
 
 from rgbmatrix5x5 import RGBMatrix5x5
 
+print("""
+RGBMatrix5x5 - Glorious Rainbows!
+
+Lights up your matrix with a glorious rainbow.
+
+Press Ctrl+C to exit!
+""")
+
 rgbmatrix5x5 = RGBMatrix5x5()
 
 spacing = 360.0 / 5.0
