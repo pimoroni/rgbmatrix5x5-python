@@ -10,6 +10,7 @@ def test_set_all():
     rgbmatrix5x5.show()
     assert rgbmatrix5x5.buf == [(255, 0, 0, 1.0)] * 5 * 5
 
+
 def test_set_multiple():
     sys.modules['smbus'] = mock.Mock()
     from rgbmatrix5x5 import RGBMatrix5x5
