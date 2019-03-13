@@ -39,7 +39,7 @@ classifiers = ['Development Status :: 5 - Production/Stable',
 
 setup(
     name='rgbmatrix5x5',
-    version='0.0.2',
+    version='0.0.3',
     author='Philip Howard',
     author_email='phil@pimoroni.com',
     description='LED SHIM Driver',

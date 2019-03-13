@@ -4,4 +4,4 @@ from .is31fl3731 import RGBMatrix5x5  # noqa
 I2C_DEFAULT = 0x74
 I2C_ALT = 0x77
 
-__version__ = '0.0.2'
+__version__ = '0.0.3'
