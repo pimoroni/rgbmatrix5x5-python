@@ -266,7 +266,7 @@ class Matrix:
                 x = index % 5
             else:
                 x, y = index
-            display.set_pixel(x, y, from_r + (step_r * step), from_g + (step_g * step), from_b + (step_b * step))
+            self.set_pixel(x, y, from_r + (step_r * step), from_g + (step_g * step), from_b + (step_b * step))
             step += 1
 
     def get_shape(self):
