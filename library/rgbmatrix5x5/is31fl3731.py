@@ -3,13 +3,6 @@ import time
 import atexit
 from sys import version_info
 
-try:
-    import smbus
-except ImportError:
-    if version_info[0] < 3:
-        raise ImportError('This library requires python-smbus\nInstall with: sudo apt-get install python-smbus')
-    elif version_info[0] == 3:
-        raise ImportError('This library requires python3-smbus\nInstall with: sudo apt-get install python3-smbus')
 
 
 _MODE_REGISTER = 0x00
@@ -90,6 +83,14 @@ class Matrix:
         self._is_setup = True
 
         if self.i2c is None:
+            try:
+                import smbus
+            except ImportError:
+                if version_info[0] < 3:
+                    raise ImportError('This library requires python-smbus\nInstall with: sudo apt-get install python-smbus')
+                elif version_info[0] == 3:
+                    raise ImportError('This library requires python3-smbus\nInstall with: sudo apt-get install python3-smbus')
+          
             try:
                 self.i2c = smbus.SMBus(1)
             except IOError as e:
