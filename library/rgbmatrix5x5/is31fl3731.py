@@ -1,6 +1,10 @@
 """Driver for the IS31FL3731."""
 import time
-import atexit
+try:
+    import atexit
+except ImportError:
+    print("atexit not found. Matrix behaviour will be undefined on exit")
+
 from sys import version_info
 
 
@@ -142,7 +146,10 @@ class Matrix:
         # Enable LEDs
         self.i2c.write_i2c_block_data(self.address, 0x00, enable_pattern)
 
-        atexit.register(self._exit)
+        try:
+            atexit.register(self._exit)
+        except NameError:
+            pass
 
     def set_clear_on_exit(self, value=True):
         """Set whether LED SHIM should be cleared upon exit.
