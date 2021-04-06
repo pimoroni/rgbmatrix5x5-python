@@ -3,10 +3,9 @@ import time
 try:
     import atexit
 except ImportError:
-    print("atexit not found. Matrix behaviour will be undefined on exit")
+    print('atexit not found. Matrix behaviour will be undefined on exit')
 
 from sys import version_info
-
 
 
 _MODE_REGISTER = 0x00
@@ -99,7 +98,7 @@ class Matrix:
                 self.i2c = smbus.SMBus(1)
             except IOError as e:
                 if hasattr(e, 'errno') and e.errno == 2:
-                    e.strerror += '\n\nMake sure you\'ve enabled i2c in your Raspberry Pi configuration.\n'
+                    e.strerror += "\n\nMake sure you've enabled i2c in your Raspberry Pi configuration.\n"
                 raise e
 
         try:
@@ -349,9 +348,9 @@ class Matrix:
 
         self.i2c.write_i2c_block_data(self.address, register, [value])
 
-    def _chunk(self, l, n):
-        for i in range(0, len(l) + 1, n):
-            yield l[i:i + n]
+    def _chunk(self, data, n):
+        for i in range(0, len(data) + 1, n):
+            yield data[i:i + n]
 
     def _pixel_addr(self, x, y):
         return x + y * 5
