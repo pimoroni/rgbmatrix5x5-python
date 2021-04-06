@@ -6,7 +6,7 @@ import colorsys
 try:
     import numpy
 except ImportError:
-    exit("This script requires the numpy module\nInstall with: sudo pip install numpy")
+    exit('This script requires the numpy module\nInstall with: sudo pip install numpy')
 
 from rgbmatrix5x5 import RGBMatrix5x5
 
