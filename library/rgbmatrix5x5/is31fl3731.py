@@ -289,7 +289,7 @@ class Matrix:
         """Show the buffer contents on the display."""
         self.setup()
 
-        next_frame = 0 if self._current_frame == 1 else 0
+        next_frame = 0 if self._current_frame == 1 else 1
 
         output = [0 for x in range(144)]
 
